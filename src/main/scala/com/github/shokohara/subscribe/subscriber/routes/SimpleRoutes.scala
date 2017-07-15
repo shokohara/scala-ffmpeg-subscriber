@@ -1,10 +1,10 @@
-package com.github.shokohara.subscriber.routes
+package com.github.shokohara.subscribe.subscriber.routes
 
 import akka.http.scaladsl.marshallers.xml.ScalaXmlSupport.defaultNodeSeqMarshaller
 import akka.http.scaladsl.server.directives.MethodDirectives.get
 import akka.http.scaladsl.server.directives.PathDirectives.path
 import akka.http.scaladsl.server.directives.RouteDirectives.complete
-import akka.actor.{ActorRef, ActorSystem}
+import akka.actor.{ ActorRef, ActorSystem }
 import akka.http.scaladsl.coding.Deflate
 import akka.http.scaladsl.marshalling.ToResponseMarshaller
 import akka.http.scaladsl.model.StatusCodes.MovedPermanently
@@ -25,11 +25,11 @@ trait SimpleRoutes {
       get { // Listens only to GET requests
         complete(<html><body><h1>Say hello to akka-http</h1></body></html>) // Completes with some html page
       }
-    }~ path("payload") {
+    } ~ path("payload") {
       post {
         complete("payload")
       }
-    }~ path("status") {
+    } ~ path("status") {
       get {
         complete(<html><body><h1>Say hello to akka-http</h1></body></html>) // Completes with some html page
       }
