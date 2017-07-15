@@ -1,4 +1,4 @@
-package com.example.routes
+package com.github.shokohara.subscriber.routes
 
 import akka.http.scaladsl.server.Route
 import akka.http.scaladsl.server.directives.PathDirectives.pathEndOrSingleSlash

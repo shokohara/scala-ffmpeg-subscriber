@@ -1,4 +1,4 @@
-package com.example
+package com.github.shokohara
 
 import akka.http.scaladsl.marshallers.xml.ScalaXmlSupport.defaultNodeSeqUnmarshaller
 import akka.http.scaladsl.model.StatusCodes

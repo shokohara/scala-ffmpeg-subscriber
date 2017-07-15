@@ -1,10 +1,10 @@
-package com.example
+package com.github.shokohara.subscriber
 
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.server.Directives
 import akka.stream.ActorMaterializer
-import com.example.routes.{ BaseRoutes, SimpleRoutes }
+import com.github.shokohara.subscriber.routes.{ BaseRoutes, SimpleRoutes }
 
 import scala.io.StdIn
 
