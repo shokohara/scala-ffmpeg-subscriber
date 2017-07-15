@@ -1,4 +1,4 @@
-package com.github.shokohara.subscribe.subscriber.routes
+package com.github.shokohara.subscribe.subscribe.routes
 
 import akka.http.scaladsl.marshallers.xml.ScalaXmlSupport.defaultNodeSeqMarshaller
 import akka.http.scaladsl.server.directives.MethodDirectives.get

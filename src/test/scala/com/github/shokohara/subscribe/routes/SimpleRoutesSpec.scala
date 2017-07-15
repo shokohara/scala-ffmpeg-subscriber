@@ -4,7 +4,7 @@ import akka.http.scaladsl.marshallers.xml.ScalaXmlSupport.defaultNodeSeqUnmarsha
 import akka.http.scaladsl.model.StatusCodes
 import akka.http.scaladsl.server.Route
 import akka.http.scaladsl.testkit.ScalatestRouteTest
-import com.github.shokohara.subscribe.subscriber.routes.SimpleRoutes
+import com.github.shokohara.subscribe.subscribe.routes.SimpleRoutes
 import org.scalatest.{ Matchers, WordSpec }
 
 import scala.xml.NodeSeq

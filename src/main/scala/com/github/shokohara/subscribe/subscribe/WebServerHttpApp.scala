@@ -1,4 +1,4 @@
-package com.github.shokohara.subscribe.subscriber
+package com.github.shokohara.subscribe.subscribe
 
 import akka.http.scaladsl.marshallers.xml.ScalaXmlSupport.defaultNodeSeqMarshaller
 import akka.http.scaladsl.server.{ HttpApp, Route }
@@ -14,7 +14,12 @@ object WebServerHttpApp extends HttpApp with App {
     pathEndOrSingleSlash { // Listens to the top `/`
       complete("Server up and running") // Completes with some text
     } ~
-      path("hello") { // Listens to paths that are exactly `/hello`
+      path("payload") { // Listens to paths that are exactly `/hello`
+        post { // Listens only to GET requests
+          complete(<html><body><h1>Say hello to akka-http</h1></body></html>) // Completes with some text
+        }
+      } ~
+      path("status") { // Listens to paths that are exactly `/hello`
         get { // Listens only to GET requests
           complete(<html><body><h1>Say hello to akka-http</h1></body></html>) // Completes with some text
         }

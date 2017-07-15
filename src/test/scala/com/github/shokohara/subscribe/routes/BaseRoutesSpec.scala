@@ -2,7 +2,7 @@ package com.github.shokohara.subscribe.routes
 
 import akka.http.scaladsl.model.StatusCodes
 import akka.http.scaladsl.testkit.ScalatestRouteTest
-import com.github.shokohara.subscribe.subscriber.routes.BaseRoutes
+import com.github.shokohara.subscribe.subscribe.routes.BaseRoutes
 import org.scalatest.{ Matchers, WordSpec }
 
 class BaseRoutesSpec extends WordSpec with Matchers with ScalatestRouteTest {
