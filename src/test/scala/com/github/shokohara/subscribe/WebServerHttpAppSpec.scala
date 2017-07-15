@@ -25,7 +25,7 @@ class WebServerHttpAppSpec extends WordSpec with Matchers with ScalatestRouteTes
     "answer to GET requests to `/status`" in {
       Get("/status") ~> WebServerHttpApp.routes ~> check {
         status shouldBe StatusCodes.OK
-        responseAs[NodeSeq] shouldBe <html><body><h1>Say hello to akka-http</h1></body></html>
+        responseAs[String] shouldBe "status"
       }
     }
     "not handle a POST request to `/status`" in {
@@ -35,6 +35,12 @@ class WebServerHttpAppSpec extends WordSpec with Matchers with ScalatestRouteTes
     }
     "respond with 405 when not issuing a GET to `/status` and route is sealed" in {
       Put("/status") ~> Route.seal(WebServerHttpApp.routes) ~> check {
+        status shouldBe StatusCodes.MethodNotAllowed
+      }
+      Post("/status") ~> Route.seal(WebServerHttpApp.routes) ~> check {
+        status shouldBe StatusCodes.MethodNotAllowed
+      }
+      Delete("/status") ~> Route.seal(WebServerHttpApp.routes) ~> check {
         status shouldBe StatusCodes.MethodNotAllowed
       }
     }

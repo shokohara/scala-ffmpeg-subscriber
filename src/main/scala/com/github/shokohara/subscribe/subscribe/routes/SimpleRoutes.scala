@@ -21,17 +21,13 @@ trait SimpleRoutes {
 
   // This `val` holds one route (of possibly many more that will be part of your Web App)
   lazy val simpleRoutes =
-    path("hello") { // Listens to paths that are exactly `/hello`
-      get { // Listens only to GET requests
-        complete(<html><body><h1>Say hello to akka-http</h1></body></html>) // Completes with some html page
-      }
-    } ~ path("payload") {
+    path("payload") {
       post {
         complete("payload")
       }
     } ~ path("status") {
       get {
-        complete(<html><body><h1>Say hello to akka-http</h1></body></html>) // Completes with some html page
+        complete("status") // Completes with some html page
       }
     }
 }
